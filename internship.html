@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNSHIP FORM</title>
+    <script>
+        // Function to move to the next input when "Enter" is pressed
+        function moveToNextInput(event, nextInputId) {
+            // Check if "Enter" key (keyCode 13) is pressed
+            if (event.key === 'Enter') {
+                // Move focus to the next input field
+                document.getElementById(nextInputId).focus();
+                event.preventDefault(); // Prevent form submission
+            }
+        }
+    </script>
+</head>
+<body BGCOLOR="SKYBLUE">
+    <h3 align="center">
+        <font face="Lato" color="black" size="7">INTERNSHIP FORM</font>
+    </h3>
+
+    <form action="EX.HTML" method="POST">
+        NAME: <input type="text" name="USERNAME" id="username" onkeydown="moveToNextInput(event, 'age')"><br><br>
+        AGE: <input type="number" name="AGE" id="age" onkeydown="moveToNextInput(event, 'email')"><br><br>
+        EMAIL: <input type="email" name="EMAIL" id="email" onkeydown="moveToNextInput(event, 'genderMale')"><br><br>
+        GENDER:
+        <input type="radio" name="GENDER" id="genderMale"> MALE
+        <input type="radio" name="GENDER" id="genderFemale"> FEMALE
+        <input type="radio" name="GENDER" id="genderOther"> OTHERS <br><br>
+        DOB: <input type="date" id="dob" onkeydown="moveToNextInput(event, 'description')"><br><br>
+        DESCRIPTION?<br><br>
+        <textarea id="description" cols="10" rows="10" onkeydown="moveToNextInput(event, 'checkbox1')"></textarea><br><br>
+        CODE LANGUAGES:<br><br>
+        
+        <input type="checkbox" id="checkbox1" onchange="moveToNextCheckbox(this, 'checkbox2')"> C<br><br>
+        <input type="checkbox" id="checkbox2" onchange="moveToNextCheckbox(this, 'checkbox3')"> C++<br><br>
+        <input type="checkbox" id="checkbox3" onchange="moveToNextCheckbox(this, 'checkbox4')"> JAVA<br><br>
+        <input type="checkbox" id="checkbox4" onchange="moveToNextCheckbox(this, 'checkbox5')"> HTML<br><br>
+        <input type="checkbox" id="checkbox5" onchange="moveToNextCheckbox(this, 'checkbox6')"> CSS<br><br>
+        <input type="checkbox" id="checkbox6" onchange="moveToNextCheckbox(this, 'checkbox7')"> DBMS<br><br>
+        
+        <select id="duration" onkeydown="moveToNextInput(event, 'resume')">
+            <option>3 MONTHS</option>
+            <option>4 MONTHS</option>
+            <option>6 MONTHS</option>
+        </select>
+        
+        UPLOAD RESUME:<br>
+        <input type="file" id="resume" onkeydown="moveToNextInput(event, 'submitButton')"><br><br>
+        
+        <!-- Hyperlink for Submit Button -->
+        <a href="C:\Users\RIDGE\Desktop\leela\FORM.html">
+            <button type="button" id="submitButton">Submit</button>
+        </a>
+    </form>
+</body>
+</html>
